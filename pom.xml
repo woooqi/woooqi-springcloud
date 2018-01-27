@@ -3,23 +3,23 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>purchase</groupId>
-	<artifactId>gov-purchase</artifactId>
+	<groupId>woooqi</groupId>
+	<artifactId>woooqi-springcloud</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
-		<module>gov-purchase-server-eureka</module>
-        <module>gov-purchase-service-menu</module>
-		<module>gov-purchase-service-user</module>
-        <module>gov-purchase-hystrix-turbine</module>
-        <module>gov-purchase-gateway-zuul</module>
-        <module>gov-purchase-service-feign</module>
-		<module>woooqi-web</module>
-        <module>gov-purchase-entity</module>
-		<module>gov-purchase-config-server</module>
-        <module>gov-purchase-sleuth-zipkin</module>
+		<module>woooqi-springcloud-server-eureka</module>
+        <module>woooqi-springcloud-service-menu</module>
+		<module>woooqi-springcloud-service-user</module>
+        <module>woooqi-springcloud-hystrix-turbine</module>
+        <module>woooqi-springcloud-gateway-zuul</module>
+        <module>woooqi-springcloud-service-feign</module>
+		<module>woooqi-springcloud-web</module>
+        <module>woooqi-springcloud-entity</module>
+		<module>woooqi-springcloud-config-server</module>
+        <module>woooqi-springcloud-sleuth-zipkin</module>
     </modules>
 	<packaging>pom</packaging>
-	<name>gov-purchase</name>
+	<name>woooqi-springcloud</name>
 	<description></description>
 
 	<parent>
