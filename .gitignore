@@ -1,0 +1,8 @@
+/woooqi-springcloud.iml
+/.idea
+/woooqi-springcloud-config-server/woooqi-springcloud-config-server.iml
+/woooqi-springcloud-entity/woooqi-springcloud-entity.iml
+/woooqi-springcloud-gateway-zuul/woooqi-springcloud-gateway-zuul.iml
+/.idea/misc.xml
+/woooqi-springcloud-sleuth-zipkin/woooqi-springcloud-sleuth-zipkin.iml
+/woooqi-springcloud-service-menu/woooqi-springcloud-service-menu.iml
