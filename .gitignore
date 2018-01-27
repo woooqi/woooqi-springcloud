@@ -6,3 +6,8 @@
 /.idea/misc.xml
 /woooqi-springcloud-sleuth-zipkin/woooqi-springcloud-sleuth-zipkin.iml
 /woooqi-springcloud-service-menu/woooqi-springcloud-service-menu.iml
+/woooqi-springcloud-hystrix-turbine/woooqi-springcloud-hystrix-turbine.iml
+/woooqi-springcloud-server-eureka/woooqi-springcloud-server-eureka.iml
+/woooqi-springcloud-service-feign/woooqi-springcloud-service-feign.iml
+/woooqi-springcloud-service-user/woooqi-springcloud-service-user.iml
+/woooqi-springcloud-web/woooqi-springcloud-web.iml
