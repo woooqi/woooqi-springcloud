@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title></title>
+    <link type="text/css" href="${ctx}/static/css/index.css" rel="stylesheet"/>
+    <link type="text/css" href="${ctx}/static/css/login.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="app">
+        <div class="menu">
+            <el-card class="box-card" body-style="height:100%;width:100%;">
+                <div slot="header" class="clearfix">
+                    政府采购系统
+                </div>
+                <div style="width:90%;">
+                    <div class="warning-info">
+                        <#if errormsg?exists>
+                            <el-alert title="${errormsg}" type="info" ></el-alert>
+                        </#if>
+                    </div>
+                    <el-form id="loginform" ref="form" label-width="80px" action="${ctx}/login" method="post">
+                        <el-form-item label="用户名" prop="username">
+                            <el-input v-model="username" name="username" @blur="checkUsername" placeholder="请输入用户名" :autofocus="true"></el-input>
+                        </el-form-item>
+                        <el-form-item  label="密码" prop="password">
+                            <el-input v-model="password" name="password" placeholder="请输入密码" type="password"></el-input>
+                        </el-form-item>
+                        <div class="yzm" v-show="isShow">
+                            <div class="yzm-input">
+                                <el-form-item label="验证码"  prop="kaptcha">
+                                    <el-input name="kaptcha" v-model="kaptcha"></el-input>
+                                </el-form-item>
+                            </div>
+                            <div class="yzm-img">
+                                <img onclick = "this.src='${ctx}/static/kaptcha?date='+new Date()" src="${ctx}/static/kaptcha" />
+                            </div>
+                        </div>
+                        <div class="login-but">
+                            <div class="btn-group">
+                                <el-button type="success" @click="onSubmit" >登录</el-button>
+                                <!--<el-button type="success" style="margin-left:100px;">注册</el-button>-->
+                            </div>
+                        </div>
+                    </el-form>
+                </div>
+            </el-card>
+        </div>
+    </div>
+<script type="text/javascript" src="${ctx}/static/js/vue.js"></script>
+<script type="text/javascript" src="${ctx}/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx}/static/js/index.js"></script>
+    <script type="text/javascript" src="${ctx}/static/js/axios.min.js"></script>
+<script type="text/javascript">
+    Vue.prototype.$axios = axios;
+    var app = new Vue({
+        el:"#app",
+        data:{
+            username:"admin",
+            password:"123",
+            kaptcha:"",
+            isShow:false
+        },
+        created: function () {
+            var loginCount = "${loginCount}";
+            if(loginCount >= 1){
+                this.isShow = true;
+            }else{
+                this.isShow = false;
+            }
+            document.onkeydown = function(e){
+                if(e.keyCode == 13){
+                    $('#loginform').submit();
+                }
+            }
+        },
+        methods:{
+            onSubmit: function (event) {
+              $('#loginform').submit();
+               /* $.ajax({
+                    type: "POST",
+                    url: "${ctx}/login",
+                    data:{"username" : this.username,"password":this.password,"kaptcha":this.kaptcha,"machine":"1"},
+                    success: function(data){
+                    }
+                });*/
+            },
+            checkUsername: function (event) {
+
+                var url = '${ctx}/static/checkUsername'
+                var params = new URLSearchParams();
+                params.append('username', this.username);
+                this.$axios.post(url,params)
+                    .then(function (response) {
+                        if(response.data >= 1) {
+                            app.isShow = true;
+                        }else{
+                            app.isShow = false;
+                        }
+                    })
+                    .catch(function (response) {
+                        console.log(response);
+                    });
+            }
+
+        }
+    });
+</script>
+</body>
+</html>

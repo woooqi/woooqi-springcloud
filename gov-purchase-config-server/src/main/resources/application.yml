@@ -1,0 +1,19 @@
+server:
+  port: 8700
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      enabled: true
+      server:
+        #svn:
+          #uri: http://172.16.1.224/svn/FIN/czfin/%E6%94%BF%E5%BA%9C%E9%87%87%E8%B4%AD%E6%A0%87%E5%87%86%E7%89%88/gov-purchase/
+          #username: wangqi
+          #password: wangqi-0528
+        #default-label: config
+        git:
+          uri: https://github.com/xiaosaiya/gov-purchases/
+          searchPaths: config
+  #profiles:
+    #active: subversion

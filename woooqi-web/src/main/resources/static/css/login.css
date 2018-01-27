@@ -1,0 +1,65 @@
+html,body{
+    height:100%;
+    width:100%;
+    padding:0px;
+    margin:0px;
+    font-family: "Microsoft YaHei";
+}
+#app{
+    position: relative;
+    height:100%;
+    width:100%;
+    background: #2B3D4F;
+}
+.menu{
+    width:550px;
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.warning-info{
+    height:40px;
+    width:100%;
+    margin-bottom:10px;
+    overflow: hidden;
+}
+.el-card__body{
+    padding-top: 10px;
+}
+.btn-group{
+    margin-top:20px;
+    width:246px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+
+.yzm-input{
+    float:left;
+    display: block;
+    margin-right: 20px;
+}
+.yzm::after{
+    content: "";
+    display:block;
+    clear: both;
+}
+.el-button{
+    padding: 12px 100px;
+}
+.clearfix{
+    font-size: 24px;
+}
+.login-but{
+    position:relative;
+    height:60px;
+    margin-bottom: 20px;
+}
+.el-icon-close{
+    display: none;
+}
+.clearfix{
+    text-align: center;
+}
