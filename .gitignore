@@ -1,5 +1,6 @@
 
 /.idea
+/*.iml
 /woooqi-springcloud-config-server/*.iml
 /woooqi-springcloud-entity/*.iml
 /woooqi-springcloud-gateway-zuul/*.iml
@@ -9,5 +10,4 @@
 /woooqi-springcloud-service-user/*.iml
 /woooqi-springcloud-sleuth-zipkin/*.iml
 /woooqi-springcloud-web/*.iml
-/*.iml
 /woooqi-springcloud-hystrix-turbine/*.iml
