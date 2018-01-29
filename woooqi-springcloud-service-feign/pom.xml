@@ -16,7 +16,7 @@
     <dependencies>
         <dependency>
             <artifactId>woooqi-springcloud-entity</artifactId>
-            <groupId>woooqi</groupId>
+            <groupId>com.woooqi</groupId>
             <version>${project.version}</version>
         </dependency>
 
